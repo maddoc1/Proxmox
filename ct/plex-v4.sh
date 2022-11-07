@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 echo -e "Loading..."
 APP="Plex"
-var_disk="8"
-var_cpu="2"
-var_ram="2048"
+var_disk="4"
+var_cpu="4"
+var_ram="4096"
 var_os="ubuntu"
 var_version="22.04"
 NSAPP=$(echo ${APP,,} | tr -d ' ')
@@ -100,8 +100,8 @@ function default_settings() {
 function advanced_settings() {
   var_version=$(whiptail --title "UBUNTU VERSION" --radiolist "Choose Version" 10 58 3 \
     "18.04" "Bionic" OFF \
-    "20.04" "Focal" ON \
-    "22.04" "Jammy" OFF \
+    "20.04" "Focal" OFF \
+    "22.04" "Jammy" ON \
     3>&1 1>&2 2>&3)
   exitstatus=$?
   if [ $exitstatus = 0 ]; then echo -e "${DGN}Using Ubuntu Version: ${BGN}$var_version${CL}"; fi
