@@ -82,10 +82,10 @@ msg_ok "Installed Dependencies"
 
 if [[ -z "$(grep -w "100000" /proc/self/uid_map)" ]]; then
   msg_info "Setting Up Hardware Acceleration"
-  apt-get -y install \
-    va-driver-all \
-    ocl-icd-libopencl1 \
-    beignet-opencl-icd &>/dev/null
+#   apt-get -y install \
+#     va-driver-all \
+#     ocl-icd-libopencl1 \
+#     beignet-opencl-icd &>/dev/null
 
   /bin/chgrp video /dev/dri
   /bin/chmod 755 /dev/dri
