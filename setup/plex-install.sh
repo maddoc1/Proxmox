@@ -80,18 +80,18 @@ apt-get install -y sudo &>/dev/null
 apt-get install -y gnupg &>/dev/null
 msg_ok "Installed Dependencies"
 
-if [[ -z "$(grep -w "100000" /proc/self/uid_map)" ]]; then
-  msg_info "Setting Up Hardware Acceleration"
+# if [[ -z "$(grep -w "100000" /proc/self/uid_map)" ]]; then
+#   msg_info "Setting Up Hardware Acceleration"
 #   apt-get -y install \
 #     va-driver-all \
 #     ocl-icd-libopencl1 \
 #     beignet-opencl-icd &>/dev/null
 
-  /bin/chgrp video /dev/dri
-  /bin/chmod 755 /dev/dri
-  /bin/chmod 660 /dev/dri/*
-  msg_ok "Set Up Hardware Acceleration"
-fi
+#   /bin/chgrp video /dev/dri
+#   /bin/chmod 755 /dev/dri
+#   /bin/chmod 660 /dev/dri/*
+#   msg_ok "Set Up Hardware Acceleration"
+# fi
 
 msg_info "Setting Up Plex Media Server Repository"
 wget -q https://downloads.plex.tv/plex-keys/PlexSign.key -O - | sudo apt-key add - &>/dev/null
